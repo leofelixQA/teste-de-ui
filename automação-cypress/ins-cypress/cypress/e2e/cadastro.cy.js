@@ -47,17 +47,4 @@ it('deve validar mensagem de erro ao enviar escrever a mensagem', () => {
    cy.get('#btn-submit').click()
    cy.get('#alert-container').should("contain", "Por favor, escreva sua Mensagem")
 })
-
-it.only('deve preencher cadastro com comando customizado', () => {
-  let nome = faker.person.firstName()
-  let email = faker.internet.email()
-  cy.get('#name').type(nome)
-  cy.get('#email').type(email)
-  cy.get('#phone').type("11998745645")
-  cy.get('#password').type("teste123")
-  cy.get('#confirm-password').type("teste123")
-  cy.get('#terms-agreement').check()
-  cy.get('#register-btn').click()
-});
-
 });
