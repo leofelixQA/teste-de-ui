@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
 
+import user from "../fixtures/usuario.json" 
 import { faker } from '@faker-js/faker';
 
 describe('Funcionalidade: login', () => {
@@ -15,7 +16,7 @@ describe('Funcionalidade: login', () => {
         cy.url().should("include","/dashboard.html")
     });
 
-        it('deve fazer login com sucesso,admin', () => {
+    it('deve fazer login com sucesso,admin', () => {
         
         cy.get('#email').type("admin@biblioteca.com")
         cy.get('#password').type("admin123")
@@ -29,5 +30,9 @@ describe('Funcionalidade: login', () => {
 
     it('deve fazer login com usuario admin com comando customizado', () => {
         cy.login("admin@biblioteca.com","admin123")
+    });
+
+    it('deve fazer login usando importação de dados', () => {
+        cy.login(user.email,user.senha)
     });
 });

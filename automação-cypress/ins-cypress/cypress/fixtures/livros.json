@@ -1,0 +1,14 @@
+[
+    {
+        "livro": "1984",
+        "categoria": "ficção"
+    },
+    {
+        "livro": "O hobbit",
+        "categoria": "fantasia"
+    },
+    {
+        "livro": "Dom Casmurro",
+        "categoria": "ficção classica"
+    }
+]
