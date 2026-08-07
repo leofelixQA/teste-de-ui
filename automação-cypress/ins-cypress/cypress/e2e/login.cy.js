@@ -27,7 +27,7 @@ describe('Funcionalidade: login', () => {
         cy.login("usuario@teste.com","user123")
     });
 
-    it.only('deve fazer login com usuario admin com comando customizado', () => {
+    it('deve fazer login com usuario admin com comando customizado', () => {
         cy.login("admin@biblioteca.com","admin123")
     });
 });
