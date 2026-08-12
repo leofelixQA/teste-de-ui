@@ -10,5 +10,9 @@
     {
         "livro": "Dom Casmurro",
         "categoria": "ficção classica"
+    },
+    {
+        "livro": "A Arte da Guerra",
+        "categoria": "estrategia"
     }
 ]

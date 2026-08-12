@@ -10,9 +10,10 @@ describe('funcionalidade: registro', () => {
     it('deve preencher registro com sucesso', () => {
         let nome = faker.person.firstName()
         let email = faker.internet.email()
+        let telefone = faker.phone.number()
         cy.get('#name').type(nome)
         cy.get('#email').type(email)
-        cy.get('#phone').type("11998745645")
+        cy.get('#phone').type(telefone)
         cy.get('#password').type("teste123")
         cy.get('#confirm-password').type("teste123")
         cy.get('#terms-agreement').check()
@@ -21,10 +22,11 @@ describe('funcionalidade: registro', () => {
         cy.url().should("include", "dashboard")
     });
 
-    it.only('deve preencher registro com comando customizados', () => {
+    it('deve preencher registro com comando customizados', () => {
         let nome = faker.person.firstName()
         let email = faker.internet.email()
-        cy.preencherRegistro(nome, email, "11998745645", "teste123", "teste123")
+        let telefone = faker.phone.number()
+        cy.preencherRegistro(nome, email, telefone, "teste123", "teste123")
         cy.url().should("include", "dashboard")
         cy.get('#user-name').should("contain", nome)
     });

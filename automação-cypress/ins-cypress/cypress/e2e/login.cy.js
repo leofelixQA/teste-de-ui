@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-
+import userp from "../fixtures/usuario.json"
 import user from "../fixtures/usuario.json" 
 import { faker } from '@faker-js/faker';
 
@@ -34,5 +34,14 @@ describe('Funcionalidade: login', () => {
 
     it('deve fazer login usando importação de dados', () => {
         cy.login(user.email,user.senha)
+    });
+
+    it.only('deve fazer login usando importação de dados 2', () => {
+        cy.login(userp.emailp,userp.senhap)
+        cy.get('.btn').click()
+        //cy.get('#search-input').type("1984")
+        cy.get('.btn-primary')
+        cy.get('.d-grid > .btn-primary').click()
+   
     });
 });
